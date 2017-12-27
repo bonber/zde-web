@@ -4,7 +4,7 @@
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$rows = array();
-	    while($row = $result->fetch_assoc()) {
+	    while($row = mysqli_fetch_assoc($result)) {
 	        $rows[] = $row;
 	    }
 	    print json_encode($rows);
