@@ -1,6 +1,6 @@
 <?php
 	include("conexion.php");
-	$sql = "SELECT id, firstname, lastname FROM MyGuests";
+	$sql = "SELECT * FROM heroku_4b836cd6b27d8ea";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 	    while($row = $result->fetch_assoc()) {
