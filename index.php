@@ -1,6 +1,6 @@
 <?php
 	include("conexion.php");
-	$sql = "SELECT * FROM heroku_4b836cd6b27d8ea";
+	$sql = "SELECT * FROM productos";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 	    while($row = $result->fetch_assoc()) {
