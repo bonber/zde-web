@@ -3,24 +3,11 @@
 	$sql = "SELECT * FROM productos";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
-		echo '<rss version="2.0">
-				<channel>
-				    <title>ZDE</title>
-				    <link>https://txapitel.herokuapp.com/</link>
-				    <language>es-ES</language>
-				    <description>Productos</description>
-				    <generator>Autor del RSS</generator>';
+		$rows = array();
 	    while($row = $result->fetch_assoc()) {
-	        echo '<item>
-			    	<id>'.$row["id"].'</id>
-					<title>'.$row["nombre"].'</title>
-					<precio>'.$row["precio"].'</precio>
-					<description><![CDATA['.$row["descripcion"].']]></description>
-					<content:encoded><![CDATA[]]></content:encoded>
-				  </item>'; 
+	        $rows[] = $row;
 	    }
-	    echo '</channel>
-				  </rss>';
+	    print json_encode($rows);
 	} else {
 	    echo "0 results";
 	}
