@@ -11,7 +11,6 @@
 				    <description>Productos</description>
 				    <generator>Autor del RSS</generator>';
 	    while($row = $result->fetch_assoc()) {
-	        echo "id: " . $row["id"]. " - Nombre: " . $row["nombre"]. " - Precio" . $row["precio"]. " - Descripcion" . $row["descripcion"]. "<br>";
 	        echo '<item>
 			    	<id>'.$row["id"].'</id>
 					<title>'.$row["nombre"].'</title>
